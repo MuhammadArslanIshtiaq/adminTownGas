@@ -14,14 +14,8 @@ import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatist
 
 // Data
 import authorsTableData from "layouts/tables/data/authorsTableData";
-import projectsTableData from "layouts/tables/data/projectsTableData";
-import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
-
-// Dashboard components
-import Projects from "layouts/dashboard/components/Projects";
 
 function Dashboard() {
-  const { sales, tasks } = reportsLineChartData;
   const { columns, rows } = authorsTableData();
 
   return (
@@ -32,43 +26,24 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="dark"
-                icon="weekend"
-                title="Bookings"
+                icon="leaderboard"
+                title="All Registrations"
                 count={281}
-                percentage={{
-                  color: "success",
-                  amount: "+55%",
-                  label: "than lask week",
-                }}
               />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                icon="leaderboard"
-                title="Today's Users"
-                count="2,300"
-                percentage={{
-                  color: "success",
-                  amount: "+3%",
-                  label: "than last month",
-                }}
-              />
+              <ComplexStatisticsCard icon="pending_actions" title="Unchecked" count="2,300" />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="success"
-                icon="store"
-                title="Revenue"
+                icon="person_add"
+                title="Accepted"
                 count="34k"
-                percentage={{
-                  color: "success",
-                  amount: "+1%",
-                  label: "than yesterday",
-                }}
               />
             </MDBox>
           </Grid>
@@ -76,14 +51,9 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="primary"
-                icon="person_add"
-                title="Followers"
-                count="+91"
-                percentage={{
-                  color: "success",
-                  amount: "",
-                  label: "Just updated",
-                }}
+                icon="person_remove"
+                title="Rejected"
+                count="91"
               />
             </MDBox>
           </Grid>
@@ -104,7 +74,7 @@ function Dashboard() {
                   coloredShadow="info"
                 >
                   <MDTypography variant="h6" color="white">
-                    All Customers
+                    Task (Pending Confirmation of Unchecked Users)
                   </MDTypography>
                 </MDBox>
                 <MDBox pt={3}>

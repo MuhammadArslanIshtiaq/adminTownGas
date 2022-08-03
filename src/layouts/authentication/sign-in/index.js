@@ -11,6 +11,7 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import logo from "assets/images/logo.svg";
 
 function Basic() {
   return (
@@ -28,6 +29,9 @@ function Basic() {
           textAlign="center"
         >
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
+            <p style={{ paddingBottom: "10px" }}>
+              <img src={logo} alt="logo" width="200px" />
+            </p>
             Sign in
           </MDTypography>
         </MDBox>

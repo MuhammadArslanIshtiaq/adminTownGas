@@ -1,25 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/function-component-definition */
-/**
-=========================================================
-* Material Dashboard 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
+import MDButton from "components/MDButton";
 
 // Images
 
@@ -54,10 +37,10 @@ export default function data() {
   return {
     columns: [
       { Header: "User", accessor: "author", width: "25%", align: "left" },
-      { Header: "Wallet Address", accessor: "function", width: "30%", align: "left" },
-      { Header: "Order#", accessor: "action", align: "center" },
-      { Header: "Date", accessor: "employed", align: "center" },
-      { Header: "status", accessor: "status", align: "center" },
+      { Header: "Wallet Address", accessor: "function", align: "left" },
+      { Header: "Order#", accessor: "orderNum", align: "center" },
+      { Header: "Date", accessor: "orderDate", align: "center" },
+      { Header: "Action", accessor: "action", align: "center", width: "25%" },
     ],
 
     rows: [
@@ -71,150 +54,27 @@ export default function data() {
           />
         ),
         function: <Job title="0x123123123123123...." />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="Accepted" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
+        orderDate: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             23/04/18
           </MDTypography>
         ),
-        action: (
+        orderNum: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             001122
           </MDTypography>
         ),
-      },
-      {
-        author: (
-          <Author
-            image={team3}
-            name="Alexa Liras"
-            email="alexa@creative-tim.com"
-            phone="0900 78601"
-          />
-        ),
-        function: <Job title="0x123123123123123...." />,
-        status: (
+        action: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="Rejected" color="warning" variant="gradient" size="sm" />
+            <MDButton color="success" variant="gradient" size="small">
+              Accept
+            </MDButton>
+            <span style={{ paddingLeft: "2px", paddingRight: "2px" }}></span>
+            <MDButton color="error" variant="gradient" size="small">
+              Reject
+            </MDButton>
+            {/* <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" /> */}
           </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            11/01/19
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            001122
-          </MDTypography>
-        ),
-      },
-      {
-        author: (
-          <Author
-            image={team4}
-            name="Laurent Perrier"
-            email="laurent@creative-tim.com"
-            phone="0900 78601"
-          />
-        ),
-        function: <Job title="0x123123123123123...." />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="Accepted" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            19/09/17
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            001122
-          </MDTypography>
-        ),
-      },
-      {
-        author: (
-          <Author
-            image={team3}
-            name="Michael Levi"
-            email="michael@creative-tim.com"
-            phone="0900 78601"
-          />
-        ),
-        function: <Job title="0x123123123123123...." />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="Accepted" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            24/12/08
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            001122
-          </MDTypography>
-        ),
-      },
-      {
-        author: (
-          <Author
-            image={team3}
-            name="Richard Gran"
-            email="richard@creative-tim.com"
-            phone="0900 78601"
-          />
-        ),
-        function: <Job title="0x123123123123123...." />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="Rejected" color="warning" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            04/10/21
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            001122
-          </MDTypography>
-        ),
-      },
-      {
-        author: (
-          <Author
-            image={team4}
-            name="Miriam Eric"
-            email="miriam@creative-tim.com"
-            phone="0900 78601"
-          />
-        ),
-        function: <Job title="0x123123123123123...." />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="Rejected" color="warning" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            14/09/20
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            001122
-          </MDTypography>
         ),
       },
     ],

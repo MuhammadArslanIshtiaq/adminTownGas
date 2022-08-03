@@ -11,11 +11,10 @@ import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
-import allUsers from "layouts/tables/data/allUsers";
+import rejectedUsers from "layouts/tables/data/rejectedUsers";
 
-function Tables() {
-  const { columns, rows } = allUsers();
+function Rejected() {
+  const { columns, rows } = rejectedUsers();
 
   return (
     <DashboardLayout>
@@ -55,4 +54,4 @@ function Tables() {
   );
 }
 
-export default Tables;
+export default Rejected;
