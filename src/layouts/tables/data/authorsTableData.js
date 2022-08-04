@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
@@ -7,8 +8,7 @@ import MDButton from "components/MDButton";
 // Images
 
 import team2 from "assets/images/team-2.webp";
-import team3 from "assets/images/team-1.webp";
-import team4 from "assets/images/team-2.webp";
+import team1 from "assets/images/team-1.webp";
 
 export default function data() {
   const Author = ({ image, name, email, phone }) => (
@@ -66,6 +66,42 @@ export default function data() {
         ),
         action: (
           <MDBox ml={-1}>
+            <>
+              <MDButton color="success" variant="gradient" size="small">
+                Accept
+              </MDButton>
+              <span style={{ paddingLeft: "2px", paddingRight: "2px" }}></span>
+              <MDButton color="error" variant="gradient" size="small">
+                Reject
+              </MDButton>
+            </>
+
+            <MDBadge badgeContent="Accepted" color="success" variant="gradient" size="sm" />
+          </MDBox>
+        ),
+      },
+      {
+        author: (
+          <Author
+            image={team2}
+            name="John Michael"
+            email="john@creative-tim.com"
+            phone="0900 78601"
+          />
+        ),
+        function: <Job title="0x123123123123123...." />,
+        orderDate: (
+          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+            23/04/18
+          </MDTypography>
+        ),
+        orderNum: (
+          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+            001122
+          </MDTypography>
+        ),
+        action: (
+          <MDBox ml={-1}>
             <MDButton color="success" variant="gradient" size="small">
               Accept
             </MDButton>
@@ -73,7 +109,8 @@ export default function data() {
             <MDButton color="error" variant="gradient" size="small">
               Reject
             </MDButton>
-            {/* <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" /> */}
+
+            <MDBadge badgeContent="Accwpted" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
       },

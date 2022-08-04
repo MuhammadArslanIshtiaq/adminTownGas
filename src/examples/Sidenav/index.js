@@ -125,6 +125,12 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
     return returnValue;
   });
 
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("user");
+    window.location.href = "/sign-in";
+  };
+
   return (
     <SidenavRoot
       {...rest}
@@ -173,6 +179,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           color="primary"
           icon="login"
           fullWidth
+          onClick={handleLogout}
         >
           Logout
         </MDButton>

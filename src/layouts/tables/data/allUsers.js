@@ -8,6 +8,7 @@ import MDButton from "components/MDButton";
 
 import team1 from "assets/images/team-2.webp";
 import team2 from "assets/images/team-1.webp";
+import team3 from "assets/images/team-2.webp";
 
 export default function data() {
   const Author = ({ image, name, email, phone }) => (
@@ -45,7 +46,7 @@ export default function data() {
     rows: [
       {
         author: (
-          <Author image={team1} name="Abdullah Filum" email="abdullah@blc.com" phone="0900 78601" />
+          <Author image={team2} name="Abdullah Filum" email="abdullah@blc.com" phone="0900 78601" />
         ),
         function: <Job title="0x123123123123123...." />,
         orderDate: (
@@ -66,7 +67,7 @@ export default function data() {
       },
       {
         author: (
-          <Author image={team2} name="Waleed Sample" email="waleed@blc.com" phone="0900 78601" />
+          <Author image={team3} name="Waleed Sample" email="waleed@blc.com" phone="0900 78601" />
         ),
         function: <Job title="0x123123123123123...." />,
         orderDate: (
@@ -86,7 +87,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team1} name="Toor Chawal" email="toor@blc.com" phone="0900 78601" />,
+        author: <Author image={team2} name="Toor Chawal" email="toor@blc.com" phone="0900 78601" />,
         function: <Job title="0x123123123123123...." />,
         orderDate: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">

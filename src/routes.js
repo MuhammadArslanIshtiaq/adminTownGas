@@ -1,8 +1,8 @@
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
-import Accepted from "layouts/accepted";
-import Rejected from "layouts/rejected";
+import Accepted from "layouts/tables/data/acceptedUsers";
+import Rejected from "layouts/tables/data/rejectedUsers";
 import SignIn from "layouts/authentication/sign-in";
 
 // @mui icons
@@ -20,7 +20,7 @@ const routes = [
   {
     type: "collapse",
     name: "All Users",
-    key: "tables",
+    key: "allusers",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/all",
     component: <Tables />,
@@ -28,7 +28,7 @@ const routes = [
   {
     type: "collapse",
     name: "Accepted Users",
-    key: "tables",
+    key: "acceptedUsers",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/accepted",
     component: <Accepted />,
@@ -37,19 +37,19 @@ const routes = [
   {
     type: "collapse",
     name: "Rejected Users",
-    key: "tables",
+    key: "rejected",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/rejected",
     component: <Rejected />,
   },
-  // {
-  //   type: "collapse",
-  //   name: "Sign In",
-  //   key: "sign-in",
-  //   icon: <Icon fontSize="small">login</Icon>,
-  //   route: "/sign-in",
-  //   component: <SignIn />,
-  // },
+  {
+    type: "collapse",
+    name: "Sign In",
+    key: "sign-in",
+    icon: <Icon fontSize="small">login</Icon>,
+    route: "/sign-in",
+    component: <SignIn />,
+  },
 ];
 
 export default routes;
