@@ -1,4 +1,6 @@
 // @mui material components
+
+import { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
@@ -17,6 +19,22 @@ import authorsTableData from "layouts/tables/data/authorsTableData";
 
 function Dashboard() {
   const { columns, rows } = authorsTableData();
+  const [counts, setCounts] = useState([]);
+
+  useEffect(() => {
+    let token = localStorage.getItem("accessToken");
+
+    const headers = {
+      "Content-Type": "application/json",
+      "x-access-token": token,
+    };
+
+    fetch("http://audiobar.xyz/api/admin/count", { headers }).then((result) => {
+      result.json().then((resp) => {
+        setCounts(resp);
+      });
+    });
+  }, []);
 
   return (
     <DashboardLayout>
@@ -28,13 +46,17 @@ function Dashboard() {
                 color="dark"
                 icon="leaderboard"
                 title="All Registrations"
-                count={281}
+                count={counts.total_registered_users}
               />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard icon="pending_actions" title="Unchecked" count="2,300" />
+              <ComplexStatisticsCard
+                icon="pending_actions"
+                title="Unchecked"
+                count={counts.awaiting_acceptance}
+              />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
@@ -43,7 +65,7 @@ function Dashboard() {
                 color="success"
                 icon="person_add"
                 title="Accepted"
-                count="34k"
+                count={counts.accepted}
               />
             </MDBox>
           </Grid>
@@ -53,7 +75,7 @@ function Dashboard() {
                 color="primary"
                 icon="person_remove"
                 title="Rejected"
-                count="91"
+                count={counts.rejected}
               />
             </MDBox>
           </Grid>
